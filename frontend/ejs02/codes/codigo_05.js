@@ -13,7 +13,7 @@ var salida = "";
 //que contiene el web service
 //--------------------------------------------------------------
 var remoto = new XMLHttpRequest();
-var url = "http://demoyork.com:5000";
+var url = "http://localhost:5000";
 
 //Programación de evento botón guardar
 btnGuardar.addEventListener("click",function(){

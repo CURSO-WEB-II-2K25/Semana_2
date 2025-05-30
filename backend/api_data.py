@@ -12,11 +12,13 @@ Estudiante...:
 # -------------------------------------------------------
 # Import libraries API service support
 # -------------------------------------------------------
+print("Importing libraries...")
 from datetime import datetime
 import random
 
 from flask import Flask, jsonify, abort, make_response, request
 from flask_cors import CORS
+
 
 # Create flask app
 app = Flask(__name__)

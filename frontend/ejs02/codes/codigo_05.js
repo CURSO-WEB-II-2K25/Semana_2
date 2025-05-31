@@ -45,7 +45,7 @@ btnGuardar.addEventListener("click",function(){
 
                 document.getElementById("Datos").innerHTML = salida;
             }else{
-                document.getElementById("Datos").innerHTML = (remoto.responseText);
+                document.getElementById("Datos").innerHTML = (resul);
             } //fin del if de status
         }//fin del if readyState
     }//fin de la funcion interna

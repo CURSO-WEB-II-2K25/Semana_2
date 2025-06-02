@@ -164,17 +164,25 @@ def get_user(token):
 def get_login(email, passwd):
     try:
         conexDB = contextDB()
-        user = conexDB.apiData_01.user.find_one({"email":{"$eq":email},"passwd":{"$eq":passwd}})
-        if user == None:
-            abort(404)
-        data = {
-            "status_code": 200,
-            "status_message": "Ok",
-            "data": {'user': {"name": user['name'],
-                              "token": user['_id']
-                              }
-                    }
-        }
+        user = conexDB.apiData_01.user.find_one({"email":{"$eq":email}})
+        
+        if user == None: # No hay usuario con ese email.
+            abort(404)    
+        elif user["passwd"] != passwd: # Si existe el usuario, verificamos la contraseña.
+            data = {
+                "status_code": 401,
+                "status_message": "Unauthorized",
+                "data": "Correo electrónico o contraseña incorrectos"
+            }
+        else:
+            data = {
+                "status_code": 200,
+                "status_message": "Ok",
+                "data": {'user': {"name": user['name'],
+                                "token": user['_id']
+                                }
+                        }
+            }
         conexDB.close()
     except Exception as expc:
         abort(404)

@@ -1,0 +1,28 @@
+@app.route('/login/<string:email>/<string:passwd>', methods=['GET'])
+def get_login(email, passwd):
+    try:
+        conexDB = contextDB()
+        # user = conexDB.apiData_01.user.find_one({"email":{"$eq":email},"passwd":{"$eq":passwd}})
+        userEmail = conexDB.apiData_01.user.find_one({"email": {"$eq": email}})
+        print("userEmail encontrado:", userEmail)
+        # userPasswd = conexDB.apiData_01.user.find_one({"passwd": {"$eq": passwd}})
+        if userEmail is None:
+            print("userEmail no encontrado")
+            abort(404)
+        elif userEmail["passwd"] != passwd:
+            print("Contraseña incorrecta")
+            abort(401)
+        user = userEmail
+        data = {
+            "status_code": 200,
+            "status_message": "Ok",
+            "data": {'user': {"name": user['name'],
+                            "token": user['_id']
+                            }
+                    }
+        }
+        conexDB.close()
+        return jsonify(data), 200
+    except Exception as expc:
+        print(f"[ERROR]: {expc}")
+        abort(500)

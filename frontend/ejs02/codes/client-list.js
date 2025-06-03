@@ -52,8 +52,29 @@ function crearCardClientes(listaClientes) {
                             <strong>Teléfono:</strong> ${cliente.cellphone || ""}<br>
                             <strong>Token:</strong> ${cliente.token || ""}<br>
                         </p>
-                        <button class="btn btn-primary btn-sm me-2">Modificar</button>
-                        <button class="btn btn-danger btn-sm">Eliminar</button>
+                        <button 
+                            class="btn btn-primary btn-sm me-2" 
+                            data-id="${cliente.id || ''}"
+                            data-idcard="${cliente.idcard || ''}"
+                            data-name="${cliente.name || ''}"
+                            data-email="${cliente.email || ''}"
+                            data-cellphone="${cliente.cellphone || ''}"
+                            data-token="${cliente.token || ''}"
+                        >Modificar</button>
+                        <a 
+                            <class="btn btn-primary btn-sm me-2"
+                            href="#?id=${encodeURIComponent(cliente.id || '')}&idcard=${encodeURIComponent(cliente.idcard || '')}&name=${encodeURIComponent(cliente.name || '')}&email=${encodeURIComponent(cliente.email || '')}&cellphone=${encodeURIComponent(cliente.cellphone || '')}&token=${encodeURIComponent(cliente.token || '')}"
+                            
+                        >Modificar</a>>
+
+                        <button class="btn btn-danger btn-sm"
+                            data-id="${cliente.id || ''}"
+                            data-idcard="${cliente.idcard || ''}"
+                            data-name="${cliente.name || ''}"
+                            data-email="${cliente.email || ''}"
+                            data-cellphone="${cliente.cellphone || ''}"
+                            data-token="${cliente.token || ''}"
+                        >Eliminar</button>
                     </div>
                 </div>
             </div>

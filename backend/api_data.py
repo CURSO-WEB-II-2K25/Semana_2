@@ -204,7 +204,7 @@ def create_customer(token):
         'idcard': request.json['idcard'],
         'name': request.json['name'],
         'cellphone': request.json['cellphone'],
-        'email': request.json.get('email', "sin definir"),
+        'email': request.json['email'],
         'token': token
     }
     try:
@@ -214,7 +214,7 @@ def create_customer(token):
             'idcard': request.json['idcard'],
             'name': request.json['name'],
             'cellphone': request.json['cellphone'],
-            'email': request.json.get('email', "sin definir"),
+            'email': request.json['email'],
             'token': token
         }
         salida = {
@@ -233,8 +233,9 @@ def get_customers(token):
     try:
         conexDB = contextDB()
         datos = conexDB.apiData_01.customer.find({"token":{"$eq":token}})
+        datos_lista = list(datos)  # Convertimos el cursor a lista
 
-        if datos.count() == 0:
+        if len(datos_lista) == 0:
             data = {
                 "status_code": 200,
                 "status_message": "Ok",
@@ -242,7 +243,7 @@ def get_customers(token):
             }
         else:
             lista = []
-            for collect in datos:
+            for collect in datos_lista:
                 lista.append({"id": collect['_id'],
                       "idcard": collect['idcard'],
                       "name": collect['name'],
@@ -256,7 +257,8 @@ def get_customers(token):
                 "data": lista
             }
         conexDB.close()
-    except:
+    except Exception as e:
+        print(f"Error en get_customers: {e}")
         abort(500)
     return jsonify(data)
 

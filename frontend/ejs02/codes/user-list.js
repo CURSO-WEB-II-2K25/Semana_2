@@ -46,3 +46,6 @@ function mostrarClienteActual() {
         alert("No hay un usuario logueado.");
     }
 };
+document.addEventListener("DOMContentLoaded", function(){
+    mostrarClienteActual()
+})

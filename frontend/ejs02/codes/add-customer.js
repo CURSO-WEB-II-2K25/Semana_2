@@ -19,7 +19,7 @@ function guardarCliente() {
             txtEmailClienteAdd.value === "" ||
             txtTelefonoClienteAdd.value === ""
         ) {
-            alert('Por favor, presione el botón "Mostrar Usuario Logueado" y complete todos los campos requeridos.');
+            alert('Por favor complete todos los campos requeridos.');
             return;
         }
         let idcard = txtIdClienteAdd.value;

@@ -74,6 +74,10 @@ function eliminarCliente(token,idCus){
     });
 }
 
+function agregarIdCliente(id){
+    localStorage.setItem("Id_Cliente_Seleccionado", id);
+}
+
 function crearTablaClientes(listaClientes) {
     const contenedor = document.getElementById("tablaClientes");
     contenedor.innerHTML = ""; 
@@ -84,7 +88,7 @@ function crearTablaClientes(listaClientes) {
                 <td>${cliente.idcard || ""}</td>
                 <td>${cliente.name || ""}</td>
                 <td>
-                    <a class="btn btn-primary btn-sm me-2" href="#">Modificar</a>
+                    <a class="btn btn-primary btn-sm me-2" href="modifyCustomer.html" onclick="agregarIdCliente('${cliente.id}')">Modificar</a>
                     <button class="btn btn-danger btn-sm" onclick="eliminarCliente('${usuarioActual[0].usuario_id}','${cliente.id}')">Eliminar</button>
                 </td>
             </tr> 

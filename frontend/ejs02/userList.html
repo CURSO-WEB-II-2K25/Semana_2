@@ -22,12 +22,12 @@
                 <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
                     <div class="navbar-nav">
                         <a class="nav-link" href="index.html">Iniciar Sesión</a>
-                        <a class="nav-link" href="register.html">Ingresar Usuario</a>
+                        <!--<a class="nav-link" href="register.html">Ingresar Usuario</a>-->
                         <a class="nav-link active" aria-current="page" href="userList.html">Lista del usuario actual</a>
                         <!--En la lista anterior por cada cliente mostrado, deben aparecer los accesos a los métodos de
                         modificar y borrar el cliente.-->
                         <a class="nav-link" href="addCustomer.html">Agregar cliente al usuario actual</a>
-                        <a class="nav-link" href="clientList.html">Listado de clientees del usuario actual</a>
+                        <a class="nav-link" href="clientListTest.html">Listado de clientees del usuario actual</a>
                         <!--<a class="nav-link" href="#">Modificar los datos</a>-->
                         <!--El método de borrar debe confirmar si desea eliminar el registro del cliente o no.-->
                     </div>
@@ -36,32 +36,27 @@
         </nav>
     </header>
    
-    <main class="container">
-        <h2 class="mb-4">Información del usuario actual</h2>
-
-        <div class="mb-3">
-            <button class="btn btn-dark" id="btnMostrarCliente" onclick="mostrarClienteActual()">Mostrar Usuario</button>
+    <main class="container d-flex align-items-center justify-content-center" style="min-height: 100vh;">
+        <div style="width: 100%; max-width: 500px;">
+            <h2 class="mb-4">Información del usuario actual</h2>
+            <div class="mb-3 d-flex">
+                <button class="btn btn-dark" id="btnMostrarCliente" onclick="mostrarClienteActual()">Mostrar Usuario</button>
+            </div>
+            <form id="clienteForm" class="p-4 border rounded bg-light">
+                <div class="mb-3">
+                    <label for="clienteId" class="form-label">ID del usuario</label>
+                    <input type="text" class="form-control" id="clienteId" readonly>
+                </div>
+                <div class="mb-3">
+                    <label for="clienteNombre" class="form-label">Nombre</label>
+                    <input type="text" class="form-control" id="clienteNombre">
+                </div>
+                <div class="mb-3">
+                    <label for="clienteEmail" class="form-label">Correo Electrónico</label>
+                    <input type="email" class="form-control" id="clienteEmail">
+                </div>
+            </form>
         </div>
-
-        <form id="clienteForm" class="p-4 border rounded bg-light">
-            <div class="mb-3">
-                <label for="clienteId" class="form-label">ID del usuario</label>
-                <input type="text" class="form-control" id="clienteId" readonly>
-            </div>
-            <div class="mb-3">
-                <label for="clienteNombre" class="form-label">Nombre</label>
-                <input type="text" class="form-control" id="clienteNombre">
-            </div>
-            <div class="mb-3">
-                <label for="clienteEmail" class="form-label">Correo Electrónico</label>
-                <input type="email" class="form-control" id="clienteEmail">
-            </div>
-            <!--
-            <div class="d-flex justify-content-between">
-                <button type="button" class="btn btn-success">Modificar</button>
-                <button type="button" class="btn btn-danger">Borrar</button>
-            </div>-->
-        </form>
     </main>
 
 

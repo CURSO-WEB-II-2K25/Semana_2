@@ -21,6 +21,7 @@ function crearUsuario(id,nombre, correo) {
 
 }
 
+
 // Funcion cerrar sesión
 function cerrarSesion() {
     // Limpiar el usuario actual

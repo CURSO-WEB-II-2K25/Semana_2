@@ -13,49 +13,30 @@
                 <img src="img/encabe.png" class="img-fluid" alt="logo">
             </div>
         </div>
-        <nav class="navbar navbar-expand-lg bg-body-tertiary">
-            <div class="container-fluid">
-                <a class="navbar-brand" href="#">Practica<span class="numerito">-01</span></a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-                    <div class="navbar-nav">
-                        <a class="nav-link" href="index.html">Iniciar Sesión</a>
-                        <a class="nav-link active" aria-current="page" href="register.html">Ingresar Usuario</a>
-                        <a class="nav-link" href="userList.html">Lista del usuario actual</a>
-                        <!--En la lista anterior por cada cliente mostrado, deben aparecer los accesos a los métodos de
-                        modificar y borrar el cliente.-->
-                        <a class="nav-link" href="addClient.html">Agregar cliente al usuario actual</a>
-                        <a class="nav-link" href="clientList.html">Listado de clientees del usuario actual</a>
-                        <!--<a class="nav-link" href="#">Modificar los datos</a>-->
-                        <!--El método de borrar debe confirmar si desea eliminar el registro del cliente o no.-->
-                    </div>
-                </div>
-            </div>
-        </nav>
     </header>
    
-    <main class="container">
-        <h2 class="mb-4">Ingresar Usuario</h2>
-        <form name="formita" enctype="application/x-www-form-urlencoded" class="p-4 border rounded bg-light">
-            <div class="mb-3">
-                <label for="txtNomb" class="form-label">Nombre:</label>
-                <input type="text" class="form-control" id="txtNomb" maxlength="15" required autofocus>
-            </div>
-            <div class="mb-3">
-                <label for="txtEmail" class="form-label">Correo electrónico:</label>
-                <input type="email" class="form-control" id="txtEmail" maxlength="30" required>
-            </div>
-            <div class="mb-3">
-                <label for="txtContra" class="form-label">Contraseña:</label>
-                <input type="password" class="form-control" id="txtContra" maxlength="10" required>
-            </div>
-            <div class="d-flex justify-content-center align-items-center gap-2">
-                <button type="button" class="btn btn-primary" id="btnGuardar">Guardar</button>
-            </div>
-        </form>
-    </main>
+    <main class="container d-flex align-items-center justify-content-center" style="min-height: 100vh;">
+    <form name="formita" enctype="application/x-www-form-urlencoded"
+        class="p-4 border rounded bg-light"
+        style="max-width: 400px; width: 100%; min-height: 400px;">
+        <h2 class="mb-4 text-center">Ingresar Usuario</h2>
+        <div class="mb-3">
+            <label for="txtNomb" class="form-label">Nombre:</label>
+            <input type="text" class="form-control" id="txtNomb" maxlength="15" required autofocus>
+        </div>
+        <div class="mb-3">
+            <label for="txtEmail" class="form-label">Correo electrónico:</label>
+            <input type="email" class="form-control" id="txtEmail" maxlength="30" required>
+        </div>
+        <div class="mb-3">
+            <label for="txtContra" class="form-label">Contraseña:</label>
+            <input type="password" class="form-control" id="txtContra" maxlength="10" required>
+        </div>
+        <div class="d-flex justify-content-center align-items-center gap-2">
+            <button type="button" class="btn btn-primary" id="btnGuardar">Guardar</button>
+        </div>
+    </form>
+</main>
 
     <div id="Datos"></div>
 

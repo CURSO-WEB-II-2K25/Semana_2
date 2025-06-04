@@ -33,7 +33,7 @@ function mostrarClienteActual() {
             if (data.status_code === 200 && data.status_message === "Ok") {
                 let nombre = data.data.user.name;
                 let correo = decodeURIComponent(data.data.user.email);
-                txtNombreCliente.value = nombre;
+                txtNombreCliente.value = nombre.toUpperCase();
                 txtEmailCliente.value = correo;
             } 
         })

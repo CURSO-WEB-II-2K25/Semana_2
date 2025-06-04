@@ -44,6 +44,8 @@ btnGuardar.addEventListener("click",function(){
                 salida = salida.concat('Clave: '  + data["passwd"] + '<br />');
 
                 document.getElementById("Datos").innerHTML = salida;
+                alert("¡Usuario registrado exitosamente!");
+                window.location.href = "index.html"; 
             }else{
                 document.getElementById("Datos").innerHTML = (remoto.responseText);
             } //fin del if de status

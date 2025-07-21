@@ -8,7 +8,7 @@ let ListaUsuariosRegistrados = JSON.parse(localStorage.getItem("Lista_Usuarios_R
 // Declara las variables para conectarse con servidor remoto
 // que contiene el web service
 //--------------------------------------------------------------
-let url = "http://localhost:5000"; // Actualizada según la documentación
+let url = "http://192.168.100.171:5000"; // Actualizada según la documentación
 
 // Creacion de funciones
 function crearUsuario(id,nombre, correo) {
